@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>list</title>
+</head>
+<body>
+<div>
+    {% for token in tokens %}
+    <div>
+        <p>Employee Name: {{ token.empName }}</p>
+        <p>Employee ID: {{ token.empId }}</p>
+        <p>Meal Date: {{ token.meal_date }}</p>
+    </div>
+{% endfor %}
+</div>
+</body>
+</html>
