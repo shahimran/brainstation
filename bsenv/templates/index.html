@@ -1,6 +1,6 @@
 
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:meal="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -13,6 +13,7 @@
 <a href="{% url "meal:menu"%}">next page.</a>
 <a href="{% url "meal:token_list"%}">tokens.</a>
 <a href="{% url "meal:registration" %}"> registration here</a>
+<p><a href="{% url "meal:user"%}">User Registration</a></p>
 
 </body>
 </html>
