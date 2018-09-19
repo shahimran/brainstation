@@ -8,4 +8,5 @@ urlpatterns = [
     url(r'^tokens/',views.token_list,name="token_list"),
     url(r'^registration/',views.registration,name="registration"),
     url(r'^user/',views.user,name="user"),
+    url(r'^profile/',views.profile_list,name="profile_list"),
 ]

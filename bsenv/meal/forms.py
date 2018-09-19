@@ -7,6 +7,7 @@ class TokenForm(forms.ModelForm):
         model = Token
         fields = ['empName',
                   'empId',
+                  'lunch',
                   ]
 
 class UserForm(forms.ModelForm):

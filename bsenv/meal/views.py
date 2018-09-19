@@ -16,14 +16,13 @@ def token_list(request):
     return render(request, "token_list.html", {'tokens': tokens})
 
 def registration(request):
-	form = TokenForm()
+	form = TokenForm(request.POST)
 	if request.method == 'POST':
-		form = TokenForm(request.POST)
 		if form.is_valid():
-			form.save(commit=True)
+			form.save()
 			return index(request)
 		else:
-			print("error! check model ,view & form file.")
+			form = TokenForm()
 	return render(request,'registration.html',{'form':form})
 
 def user(request):
@@ -36,3 +35,7 @@ def user(request):
 		else:
 			print("error! check model,view & form file.")
 	return render(request,'user.html',{'form':form})
+
+def profile_list(request):
+    profiles = User.objects.all()
+    return render(request, "profile.html", {'profiles': profiles})
