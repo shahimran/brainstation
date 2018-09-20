@@ -2,17 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>list</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Token list</title>
 </head>
 <body>
-<div>
-    {% for token in tokens %}
-    <div>
-        <p>Employee Name: {{ token.empName }}</p>
-        <p>Employee ID: {{ token.empId }}</p>
-        <p>Meal Date: {{ token.meal_date }}</p>
+<div class="col-lg-2"></div>
+    <div class="col-lg-8">
+        <table>
+            {% for token in tokens %}
+                <tr>
+                    <td>Employee Name:{{ token.empName }}</td>
+                    <br>
+                    <td>Employee ID:{{ token.empId }}</td>
+                    <br>
+                    <td>Phone Number:{{ token.phone }}</td>
+                    <br>
+                    <td>Lunch Type:{{ token.lunch }}</td>
+                    <td>Date:{{ token.meal_date }}</td>
+                </tr>
+            {% endfor %}
+        </table>
     </div>
-{% endfor %}
-</div>
+<div class="col-lg-2"></div>
 </body>
 </html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Data </title>
+</head>
+<body>
+    <div>
+        <input id="fName"  type="text" class="query-search" placeholder="First Name">
+        <input id="lName"  type="text" class="query-search" placeholder="Last Name">
+        <input onclick="setGetParameter()" type="button" class="btn btn-primary" value = "save"/>
+    </div>
+
+
+<script>
+    function setGetParameter(){
+        var fName = $("#fName").val();
+        var lName = $("#lName").val();
+        $.ajax({
+          type: "POST",
+          url: 'http://127.0.0.1:8000/view/',
+          data:{firstName:fName,
+            lastName:lName
+          },
+
+          success: function(result){
+            alert("Success");
+          },
+          error:function(err){
+            alert(err)
+          }
+        });
+    }
+</script>
+</body>
+</html>
